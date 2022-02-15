@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+
+<style> 
+input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+</style>
+
+<p> 
+
+    <label> <h5> To play more you can check this site <a href = 'https://www.devangthakkar.com/wordle_archive/?226' target="_blank" >Click here</a>  </h5> 
+    </label>
+      
+</p>
+
+<form action="{% url 'solver'%}" method="get">
+      <input name='answer' type="text" placeholder="Enter word.." >
+      <input name ='code' type="text" placeholder="Enter letter color here ..">
+      <br>
+      <button type="submit" name="button">Submit topic</button>
+</form>
+
+<br>
+<br>
+
+
+{% comment %} <p>length of suggestion is </p>
+
+{} {% endcomment %}
+
+
+<h3> {{length}} words suggested - </h3>
+
+<ol type = 1>
+{% for d in datas %}
+    <li>  <a href = "https://www.merriam-webster.com/dictionary/{{d}}" target="_blank">{{d}}</a> </li>
+{% endfor %}
+</ol>
+
+
+
+
+{% endblock %}
+
+
+

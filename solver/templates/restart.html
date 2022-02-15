@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+
+
+
+{% comment %} <p>length of suggestion is </p>
+
+{} {% endcomment %}
+
+
+{% comment %} <h3> Word suggestions are - </h3>
+
+<ol type = 1>
+{% for d in datas %}
+    <li> {{d}} </li>
+{% endfor %}
+</ol>
+ {% endcomment %}
+
+
+ <h5> DEAD END !! </h5>
+
+<p>
+    <label>Seems like there is no words suggested based on your entry . This might happen because you have entered the word and code wrong or maybe because of some error at our end</label>
+    <label> Click here to restart and reload the page <a href = "{% url 'index'%}">RESTART</a></label>
+</p>
+
+
+
+
+{% endblock %}
+
+
+

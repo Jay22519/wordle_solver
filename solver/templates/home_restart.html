@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block page_content %}
+
+<style> 
+input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+</style>
+
+
+<h2>Welcome to Wordle solver</h2>
+
+<p>Helping you to look for wordle answer from more than <b>15,900</b> 5 letter words :)</p>
+
+<p> 
+
+    <label> <h5> To play more you can check this site <a href = 'https://www.devangthakkar.com/wordle_archive/?226' target="_blank" >Click here</a>  </h5> 
+    </label>
+      
+</p>
+<br>
+<h4>How to use this Website to solve wordle</h4>
+<p>
+
+      <ol type = 1>
+            <li>In the given below form enter your word</li>
+            <li>Now you have to enter color code associated with the respective letters </li>
+            <li>Color codes are -> B for black , G for green and Y for yellow</li>
+      </ol>
+
+      <br>
+      <ul>
+            <h5>Example</h5>
+            <ol type = 1>
+                  <li>For example your word is <b>aegis</b></li>
+                  <li>And color associated with respective letters in wordle is : 
+                              <ol type = 'A'>
+                                    <li> <b>a</b> : green that is a is at correct position</li>
+                                    <li> <b>e</b> : black that is e is not present in the correct answer</li>
+                                    <li> <b>i</b> : black that is i is  not present in the correct answer</li>
+                                    <li> <b>g</b> : black that is g is not present in the correct answe</li>
+                                    <li> <b>s</b> : yellow that is s is present in correct answer but at some other position</li>
+
+                              </ol>
+                  </li>
+                  <li>So your color code to enter into form will be -> GBBBY (in any case)</li>
+            </ol>
+      </ul>
+
+</p>
+
+
+
+<h5> Heyyy a small suggestion </h5>
+<ul>
+
+<p>
+      <label>Although our system will help you find answer but we suggest you start with words <b>aegis</b> and <b>court</b> 
+            as first 2 words as it will reduce your effort in searching for answer by a great length (because this 2 words contain all 
+                  5 vowels and in total 10 different words)
+      </label>
+</p>
+
+</ul>
+
+<p>
+
+<form action="{% url 'solver_init'%}" method="get">
+      <input name="answer" type="text" placeholder="Enter word.." >
+      <input name ="code" type="text" placeholder="Enter letter color here ..">
+      <br>
+      <button type="submit" name="button">Submit topic</button>
+</form>
+
+{% endblock %}
